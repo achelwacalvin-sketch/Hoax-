@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hoax - Social Media</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Hoax</h1>
+    <input type="text" placeholder="Search Hoax">
+</header>
+
+<section class="login">
+    <h2>Welcome to Hoax</h2>
+    <input id="username" placeholder="Username">
+    <button onclick="login()">Login</button>
+</section>
+
+<main id="home" style="display:none">
+
+    <div class="profile">
+        <h2 id="userName"></h2>
+        <button>⚙ Settings</button>
+    </div>
+
+    <div class="post-box">
+        <textarea id="postText" placeholder="What's on your mind?"></textarea>
+        <button onclick="createPost()">Post</button>
+    </div>
+
+    <div id="posts"></div>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+          </html>
