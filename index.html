@@ -10,31 +10,63 @@
 
 <header>
     <h1>Hoax</h1>
-    <input type="text" placeholder="Search Hoax">
 </header>
 
 <section class="login">
-    <h2>Welcome to Hoax</h2>
-    <input id="username" placeholder="Username">
+
+    <h2>Create Account / Login</h2>
+
+    <input id="email" type="email" placeholder="Email">
+
+    <input id="password" type="password" placeholder="Password">
+
+    <button onclick="signUp()">Sign Up</button>
+
     <button onclick="login()">Login</button>
+
+    <p id="message"></p>
+
 </section>
+
 
 <main id="home" style="display:none">
 
     <div class="profile">
         <h2 id="userName"></h2>
-        <button>⚙ Settings</button>
+        <button onclick="logout()">Logout</button>
     </div>
 
+
     <div class="post-box">
+
         <textarea id="postText" placeholder="What's on your mind?"></textarea>
+
         <button onclick="createPost()">Post</button>
+
     </div>
+
 
     <div id="posts"></div>
 
 </main>
+
+
+<!-- Firebase SDK -->
 <script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import { 
+getAuth,
+createUserWithEmailAndPassword,
+signInWithEmailAndPassword,
+signOut,
+onAuthStateChanged
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+
+const firebaseConfig = {
+  // <script type="module">
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-app.js";
   // TODO: Add SDKs for Firebase products that you want to use
@@ -53,7 +85,25 @@
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
 </script>
+};
+
+
+const app = initializeApp(firebaseConfig);
+
+const auth = getAuth(app);
+
+
+window.auth = auth;
+window.createUserWithEmailAndPassword = createUserWithEmailAndPassword;
+window.signInWithEmailAndPassword = signInWithEmailAndPassword;
+window.signOut = signOut;
+window.onAuthStateChanged = onAuthStateChanged;
+
+
+</script>
+
+
 <script src="script.js"></script>
 
 </body>
-          </html>
+</html>
