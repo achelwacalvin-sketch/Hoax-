@@ -34,7 +34,25 @@
     <div id="posts"></div>
 
 </main>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
 
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyA9SSoVQUF1EaQH72ZJLoIyFz086Y9ieSg",
+    authDomain: "hoax-social.firebaseapp.com",
+    projectId: "hoax-social",
+    storageBucket: "hoax-social.firebasestorage.app",
+    messagingSenderId: "606940357117",
+    appId: "1:606940357117:web:f9a9c3946f9bd1ce853994"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+</script>
 <script src="script.js"></script>
 
 </body>
